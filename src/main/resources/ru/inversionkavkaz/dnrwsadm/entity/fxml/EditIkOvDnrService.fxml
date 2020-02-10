@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import ru.inversion.fx.form.lov.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.entity.EditIkOvDnrServiceController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblCNAME" text="%CNAME" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvTextField fx:id="CNAME" fieldName="CNAME" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblIENABLED" text="%IENABLED" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvCheckBox fx:id="IENABLED" maxWidth="-Infinity" fieldName="IENABLED" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblCDESCRIPTION" text="%CDESCRIPTION" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="CDESCRIPTION" prefColumnCount="50" fieldName="CDESCRIPTION" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<JInvLabel fx:id="lblSECURITY_TAG" text="%SECURITY_TAG" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+<JInvTextField fx:id="SECURITY_TAG" prefColumnCount="50" fieldName="SECURITY_TAG" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+<JInvLabel fx:id="lblCURL" text="%CURL" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+<JInvTextField fx:id="CURL" prefColumnCount="50" fieldName="CURL" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+</children>
+<columnConstraints>
+<ColumnConstraints />
+<ColumnConstraints hgrow="ALWAYS" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0"/>
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>

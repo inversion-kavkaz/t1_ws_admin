@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import ru.inversion.fx.form.controls.dsbar.DSInfoBar?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.entity.ViewIkOvDnrPayLogController">
+<children>
+<JInvToolBar fx:id="toolBar" />
+<JInvTable fx:id="IK_OV_DNR_PAY_LOG" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+<columns>
+<JInvTableColumn fx:id="ID" text="%ID" fieldName="ID"  />
+<JInvTableColumn fx:id="IDDEAL" text="%IDDEAL" fieldName="IDDEAL"  />
+<JInvTableColumn fx:id="ERRCODE" text="%ERRCODE" fieldName="ERRCODE"  />
+<JInvTableColumn fx:id="ERRMESSAGE" text="%ERRMESSAGE" fieldName="ERRMESSAGE" prefWidth="300.0" />
+<JInvTableColumnDate fx:id="DCREATEDATE" text="%DCREATEDATE" fieldName="DCREATEDATE"  />
+<JInvTableColumn fx:id="OPERTYPE" text="%OPERTYPE" fieldName="OPERTYPE"  />
+<JInvTableColumnBigDecimal fx:id="SUMM" text="%SUMM" fieldName="SUMM"  />
+<JInvTableColumn fx:id="ACCOUNT" text="%ACCOUNT" fieldName="ACCOUNT"  />
+<JInvTableColumn fx:id="SINP" text="%SINP" fieldName="SINP" prefWidth="300.0" />
+<JInvTableColumn fx:id="SOUT" text="%SOUT" fieldName="SOUT" prefWidth="300.0" />
+<JInvTableColumn fx:id="CSYSTEM" text="%CSYSTEM" fieldName="CSYSTEM"  />
+</columns>
+<VBox.margin>
+<Insets left="5.0" right="5.0" />
+</VBox.margin>
+</JInvTable>
+<DSInfoBar fx:id="IK_OV_DNR_PAY_LOG$MARK">
+<VBox.margin>
+<Insets bottom="5.0" left="5.0" right="5.0" />
+</VBox.margin>
+</DSInfoBar>
+</children>
+</VBox>
