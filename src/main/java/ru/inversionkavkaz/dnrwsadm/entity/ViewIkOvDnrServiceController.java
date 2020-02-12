@@ -92,7 +92,7 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
                                     ActionFactory.ActionTypeEnum.UPDATE,
                                     ActionFactory.ActionTypeEnum.DELETE,
                                     ActionFactory.ActionTypeEnum.REFRESH);
-
+        ButtonUtils.addBtn(toolBar,"Доп. параметры сервиса", this::onShowServiceParams);
         ButtonUtils.addBtn(toolBar,"Журнал оплаты", this::onShowPayLog);
 //        toolBar.getItems ().add (ActionFactory.createButton(ActionFactory.ActionTypeEnum.SETTINGS, (a) -> JInvMainFrame.showSettingsPane ()));
 
@@ -101,10 +101,18 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
         toolBar.getItems().add(altPrint);
     }
 
-    private void prePrintAp(ApReport apReport) {
-        String p1 = dsIK_OV_DNR_SERVICE.getCurrentRow() == null ? "" : dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME().toString();
-        String p2 = dsIK_OV_DNR_SERVICE.getMarkerID() == null ? "" : dsIK_OV_DNR_SERVICE.getMarkerID().toString();
-        apReport.setParam(p1, p2);
+    private void onShowServiceParams(Event event) {
+        if (dsIK_OV_DNR_SERVICE.getCurrentRow() == null) return;
+        final String cSystemName  = dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME();
+
+        ParamMap mapProp = new ParamMap();
+        mapProp.put(ViewIkOvDnrPayLogController.INIT_PROP, cSystemName);
+        new FXFormLauncher<PIkOvDnrPayLog>(getTaskContext(), getViewContext(), ViewIkOvDnrServiceParamController.class)
+                .dialogMode(FormModeEnum.VM_SHOW)
+                .initProperties(mapProp)
+                .callback(null)
+                .modal(true)
+                .show();
     }
 
     private void onShowPayLog(Event event) {
@@ -121,6 +129,11 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
                 .show();
     }
 
+    private void prePrintAp(ApReport apReport) {
+        String p1 = dsIK_OV_DNR_SERVICE.getCurrentRow() == null ? "" : dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME().toString();
+        String p2 = dsIK_OV_DNR_SERVICE.getMarkerID() == null ? "" : dsIK_OV_DNR_SERVICE.getMarkerID().toString();
+        apReport.setParam(p1, p2);
+    }
 
 //
 //
