@@ -5,7 +5,7 @@ import ru.inversion.fx.form.ViewContext;
 import ru.inversion.fx.app.BaseApp;
 import ru.inversion.fx.form.FXFormLauncher;
 import ru.inversion.tc.TaskContext;
-import ru.inversionkavkaz.dnrwsadm.entity.ViewIkOvDnrServiceController;
+import ru.inversionkavkaz.dnrwsadm.controller.ViewIkOvDnrServiceController;
 
 /**
  *

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import ru.inversion.fx.form.lov.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrServiceParamController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblSERVICE_ID" text="%SERVICE_ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvTextField fx:id="SERVICE_ID" fieldName="SERVICE_ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblPNAME" text="%PNAME" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvTextField fx:id="PNAME" prefColumnCount="50" fieldName="PNAME" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblPVALUE" text="%PVALUE" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="PVALUE" prefColumnCount="50" fieldName="PVALUE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+</children>
+<columnConstraints>
+<ColumnConstraints />
+<ColumnConstraints hgrow="ALWAYS" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0"/>
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>

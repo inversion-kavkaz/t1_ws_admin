@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+
+<?import javafx.scene.layout.*?>
+
+<?import ru.inversion.fx.form.controls.dsbar.DSInfoBar?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.ViewIkOvDnrServiceController">
+<children>
+
+    <MenuBar VBox.vgrow="NEVER">
+        <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onExit" text="Выход" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Отчеты">
+                <items>
+                    <JInvMenuItem fx:id="printMenuItem" mnemonicParsing="false" text="Печать" onAction="#onPrint" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Справочники">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onShowProtocols" text="Протоколы" />
+                    <MenuItem mnemonicParsing="false" onAction="#onShowOvPlat" text="Получатели платежей" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+<JInvToolBar fx:id="toolBar" />
+<JInvTable fx:id="IK_OV_DNR_SERVICE" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+<columns>
+<JInvTableColumn fx:id="CNAME" text="%CNAME" fieldName="CNAME"  />
+<JInvTableColumn fx:id="IENABLED" text="%IENABLED" fieldName="IENABLED"  />
+<JInvTableColumn fx:id="CDESCRIPTION" text="%CDESCRIPTION" fieldName="CDESCRIPTION" prefWidth="300.0" />
+<JInvTableColumn fx:id="SECURITY_TAG" text="%SECURITY_TAG" fieldName="SECURITY_TAG" prefWidth="300.0" />
+<JInvTableColumn fx:id="CURL" text="%CURL" fieldName="CURL" prefWidth="300.0" />
+<JInvTableColumn fx:id="PROTOCOL" text="%PROTOCOL" fieldName="PROTOCOL"  />
+<JInvTableColumn fx:id="PERSINFOXPATH" text="%PERSINFOXPATH" fieldName="PERSINFOXPATH" />
+<JInvTableColumnBigDecimal fx:id="IDOV_PLAT" text="%IDOV_PLAT" fieldName="IDOV_PLAT"  />
+</columns>
+<VBox.margin>
+<Insets bottom="5.0" left="5.0" right="5.0" />
+</VBox.margin>
+</JInvTable>
+    <DSInfoBar fx:id="IK_OV_DNR_SERVICE$MARK">
+        <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+        </VBox.margin>
+    </DSInfoBar>
+
+</children>
+</VBox>

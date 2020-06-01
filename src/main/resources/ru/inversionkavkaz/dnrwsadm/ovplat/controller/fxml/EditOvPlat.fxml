@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.ovplat.controller.ViewOvPlatController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblIDOV_PLAT" text="%IDOV_PLAT" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvLongField fx:id="IDOV_PLAT" maxWidth="-Infinity" prefColumnCount="12" fieldName="IDOV_PLAT" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblCPSEVDO" text="%CPSEVDO" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvTextField fx:id="CPSEVDO" fieldName="CPSEVDO" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblCINN" text="%CINN" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="CINN" maxWidth="-Infinity" prefColumnCount="13" fieldName="CINN" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<JInvLabel fx:id="lblCACC" text="%CACC" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+<JInvTextField fx:id="CACC" maxWidth="-Infinity" prefColumnCount="25" fieldName="CACC" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+<JInvLabel fx:id="lblCNAMEOPER" text="%CNAMEOPER" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+<JInvTextField fx:id="CNAMEOPER" prefColumnCount="50" fieldName="CNAMEOPER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+</children>
+<columnConstraints>
+<ColumnConstraints />
+<ColumnConstraints hgrow="ALWAYS" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0"/>
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>

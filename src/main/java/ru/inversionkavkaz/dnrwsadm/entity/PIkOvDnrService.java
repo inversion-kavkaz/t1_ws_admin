@@ -19,6 +19,10 @@ public class PIkOvDnrService extends UMarkable implements Serializable
     private String CDESCRIPTION;
     private String SECURITY_TAG;
     private String CURL;
+    private String PROTOCOL;
+    private Long IDOV_PLAT;
+    private String PERSINFOXPATH;
+
 
     public PIkOvDnrService(){}
 
@@ -57,6 +61,27 @@ public class PIkOvDnrService extends UMarkable implements Serializable
     }
     public void setCURL(String val) {
         CURL = val; 
+    }
+    @Column(name="PROTOCOL", nullable = false, length = 31)
+    public String getPROTOCOL() {
+        return PROTOCOL;
+    }
+    public void setPROTOCOL(String val) {
+        PROTOCOL = val;
+    }
+    @Column(name="IDOV_PLAT", nullable = false, length = 0)
+    public Long getIDOV_PLAT() {
+        return IDOV_PLAT;
+    }
+    public void setIDOV_PLAT(Long  val) {
+        IDOV_PLAT = val;
+    }
+    @Column(name="PERSINFOXPATH",length = 255)
+    public String getPERSINFOXPATH() {
+        return PERSINFOXPATH;
+    }
+    public void setPERSINFOXPATH(String val) {
+        PERSINFOXPATH = val;
     }
     @Transient
     @Override

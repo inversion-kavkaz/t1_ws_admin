@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.ovplat.controller.ViewOvPlatController">
+<children>
+<JInvToolBar fx:id="toolBar" />
+<JInvTable fx:id="OV_PLAT" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+<columns>
+<JInvTableColumn fx:id="IDOV_PLAT" text="%IDOV_PLAT" fieldName="IDOV_PLAT"  />
+<JInvTableColumn fx:id="CPSEVDO" text="%CPSEVDO" fieldName="CPSEVDO"  />
+<JInvTableColumn fx:id="CINN" text="%CINN" fieldName="CINN"  />
+<JInvTableColumn fx:id="CACC" text="%CACC" fieldName="CACC"  />
+<JInvTableColumn fx:id="CNAMEOPER" text="%CNAMEOPER" fieldName="CNAMEOPER" prefWidth="300.0" />
+</columns>
+<VBox.margin>
+<Insets bottom="5.0" left="5.0" right="5.0" />
+</VBox.margin>
+</JInvTable>
+</children>
+</VBox>

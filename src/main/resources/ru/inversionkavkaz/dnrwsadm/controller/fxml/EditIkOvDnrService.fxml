@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import ru.inversion.fx.form.controls.JInvButton?>
+<?import ru.inversion.fx.form.controls.JInvCheckBox?>
+<?import ru.inversion.fx.form.controls.JInvComboBox?>
+<?import ru.inversion.fx.form.controls.JInvLabel?>
+<?import ru.inversion.fx.form.controls.JInvTextField?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrServiceController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblCNAME" text="%CNAME" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvTextField fx:id="CNAME" fieldName="CNAME" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblIENABLED" text="%IENABLED" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvCheckBox fx:id="IENABLED" fieldName="IENABLED" maxWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblCDESCRIPTION" text="%CDESCRIPTION" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="CDESCRIPTION" fieldName="CDESCRIPTION" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<JInvLabel fx:id="lblSECURITY_TAG" text="%SECURITY_TAG" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+<JInvTextField fx:id="SECURITY_TAG" fieldName="SECURITY_TAG" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+<JInvLabel fx:id="lblCURL" text="%CURL" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+<JInvTextField fx:id="CURL" fieldName="CURL" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+<JInvLabel fx:id="lblPROTOCOL" text="%PROTOCOL" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+<JInvComboBox fx:id="PROTOCOL" fieldName="PROTOCOL" prefHeight="25.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+<JInvLabel fx:id="lblIDOV_PLAT" text="%IDOV_PLAT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                      <JInvTextField fx:id="IDOV_PLAT" fieldName="IDOV_PLAT" maxWidth="-Infinity" prefColumnCount="0" prefHeight="25.0" prefWidth="105.0" />
+                      <JInvTextField fx:id="IDOV_PLAT_NAME" disable="true" focusTraversable="false" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+<JInvLabel fx:id="lblPERSINFOXPATH" text="%PERSINFOXPATH" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+<JInvTextField fx:id="PERSINFOXPATH" fieldName="PERSINFOXPATH" prefWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+</children>
+<columnConstraints>
+<ColumnConstraints />
+<ColumnConstraints hgrow="ALWAYS" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0" />
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0" prefHeight="21.0" prefWidth="680.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>
