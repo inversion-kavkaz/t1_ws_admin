@@ -22,6 +22,9 @@ public class PIkOvDnrService extends UMarkable implements Serializable
     private String PROTOCOL;
     private Long IDOV_PLAT;
     private String PERSINFOXPATH;
+    private String SELLERXPATH;
+    private String COMPARISONURL;
+    private String PAYELEMENTIDS;
 
 
     public PIkOvDnrService(){}
@@ -83,6 +86,28 @@ public class PIkOvDnrService extends UMarkable implements Serializable
     public void setPERSINFOXPATH(String val) {
         PERSINFOXPATH = val;
     }
+    @Column(name="SELLERXPATH",length = 255)
+    public String getSELLERXPATH() {
+        return SELLERXPATH;
+    }
+    public void setSELLERXPATH(String SELLERXPATH) {
+        this.SELLERXPATH = SELLERXPATH;
+    }
+    @Column(name = "COMPARISONURL", length = 255)
+    public String getCOMPARISONURL() {
+        return COMPARISONURL;
+    }
+    public void setCOMPARISONURL(String COMPARISONURL) {
+        this.COMPARISONURL = COMPARISONURL;
+    }
+    @Column(name = "PAYELEMENTIDS", length = 255)
+    public String getPAYELEMENTIDS() {
+        return PAYELEMENTIDS;
+    }
+    public void setPAYELEMENTIDS(String PAYELEMENTIDS) {
+        this.PAYELEMENTIDS = PAYELEMENTIDS;
+    }
+
     @Transient
     @Override
     public String getMarkStringID() {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql_expr_list>
+    <expression name="restartQueue" lang = "PL/SQL">
+        <script><![CDATA[CALL xxi.ik_ov_dnr.restartQueue(:pIID, :pMarkerId, :pProcessed, :pErrorCount)]]></script>
+        <parameters>
+            <parameter name="pIID" mode="IN" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pMarkerId" mode="IN" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pProcessed" mode="OUT" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pErrorCount" mode="OUT" sqlType="BIGINT" javaType="Long" />
+        </parameters>
+    </expression>
+
+    <expression name="disableQueue" lang = "PL/SQL">
+        <script><![CDATA[CALL xxi.ik_ov_dnr.disableQueue(:pIID, :pMarkerId, :pProcessed, :pErrorCount)]]></script>
+        <parameters>
+            <parameter name="pIID" mode="IN" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pMarkerId" mode="IN" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pProcessed" mode="OUT" sqlType="BIGINT" javaType="Long" />
+            <parameter name="pErrorCount" mode="OUT" sqlType="BIGINT" javaType="Long" />
+        </parameters>
+    </expression>
+</sql_expr_list>

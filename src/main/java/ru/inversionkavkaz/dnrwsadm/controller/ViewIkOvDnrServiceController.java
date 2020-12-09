@@ -19,6 +19,7 @@ import ru.inversion.fx.form.*;
 import ru.inversion.fx.form.controls.*;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrPayLog;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrService;
+import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrShedule;
 import ru.inversionkavkaz.dnrwsadm.ovplat.controller.ViewOvPlatController;
 import ru.inversionkavkaz.dnrwsadm.ovplat.entity.POvPlat;
 import ru.inversionkavkaz.dnrwsadm.protocol.controller.ViewIkOvDnrServiceProtocolController;
@@ -31,7 +32,7 @@ import java.util.function.BiConsumer;
 
 /**
  *
- * @author  bvv
+ * @author  Valeriy Bugaev
  * @since   Fri Feb 07 13:05:55 MSK 2020
  */
 public class ViewIkOvDnrServiceController extends JInvFXBrowserController 
@@ -41,7 +42,7 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
     @FXML private JInvToolBar toolBar;
     @FXML private DSInfoBar IK_OV_DNR_SERVICE$MARK;
 
-    JInvButtonPrint altPrint = null;
+    private JInvButtonPrint altPrint = null;
 
     public static final String STYLE_NO_ACTIVE = "-fx-background-color: #ff182c;\n" +
             "    -fx-background-insets: 0 1 1 0;\n" +
@@ -139,8 +140,8 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
     }
 
     private void prePrintAp(ApReport apReport) {
-        String p1 = dsIK_OV_DNR_SERVICE.getCurrentRow() == null ? "" : dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME().toString();
-        String p2 = dsIK_OV_DNR_SERVICE.getMarkerID() == null ? "" : dsIK_OV_DNR_SERVICE.getMarkerID().toString();
+        String p1 = dsIK_OV_DNR_SERVICE.getCurrentRow() == null ? "" : dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME();
+        String p2 = dsIK_OV_DNR_SERVICE.hasMarkedRows()||dsIK_OV_DNR_SERVICE.getMarkerID() == null ? "" : dsIK_OV_DNR_SERVICE.getMarkerID().toString();
         apReport.setParam(p1, p2);
     }
 
@@ -247,8 +248,22 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
                 .show();
     }
 
+    public void onShowSendQueue(ActionEvent actionEvent) {
+        new FXFormLauncher<POvPlat>(getTaskContext(), getViewContext(), ViewIkOvDnrSendController.class)
+                .dialogMode(FormModeEnum.VM_SHOW)
+                .modal(true)
+                .show();
+    }
+
     public void onPrint(ActionEvent actionEvent) {
         if(altPrint!=null) altPrint.fire();
+    }
+
+    public void onShowSheduleTable(ActionEvent actionEvent) {
+        new FXFormLauncher<PIkOvDnrShedule>(getTaskContext(), getViewContext(), ViewIkOvDnrSheduleController.class)
+                .dialogMode(FormModeEnum.VM_SHOW)
+                .modal(true)
+                .show();
     }
 }
 

@@ -13,7 +13,7 @@
 <?import ru.inversion.fx.form.controls.JInvLabel?>
 <?import ru.inversion.fx.form.controls.JInvTextField?>
 
-<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrServiceController">
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrServiceController">
 <children>
 <GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
 <children>
@@ -38,6 +38,13 @@
             </HBox>
 <JInvLabel fx:id="lblPERSINFOXPATH" text="%PERSINFOXPATH" GridPane.columnIndex="0" GridPane.rowIndex="7" />
 <JInvTextField fx:id="PERSINFOXPATH" fieldName="PERSINFOXPATH" prefWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+<JInvLabel fx:id="lblSELLERXPATH" text="%SELLERXPATH" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+<JInvTextField fx:id="SELLERXPATH" fieldName="SELLERXPATH" prefWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+<JInvLabel fx:id="lblCOMPARISONURL" text="%COMPARISONURL" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+<JInvTextField fx:id="COMPARISONURL" fieldName="COMPARISONURL" prefWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+<JInvLabel fx:id="lblPAYELEMENTIDS" text="%PAYELEMENTIDS" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+<JInvTextField fx:id="PAYELEMENTIDS" fieldName="PAYELEMENTIDS" prefWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
 </children>
 <columnConstraints>
 <ColumnConstraints />
@@ -54,10 +61,13 @@
 <RowConstraints />
 <RowConstraints />
 <RowConstraints />
+<RowConstraints />
+<RowConstraints />
 <RowConstraints minHeight="1.0" />
+            <RowConstraints />
 </rowConstraints>
 </GridPane>
-<ButtonBar buttonMinWidth="80.0" prefHeight="21.0" prefWidth="680.0">
+<ButtonBar buttonMinWidth="80.0" prefHeight="37.0" prefWidth="688.0">
 <buttons>
 <JInvButton fx:id="btOK" text="%EDIT.OK" />
 <JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />

@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
 <VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.ViewIkOvDnrServiceController">
 <children>
 
@@ -27,6 +28,8 @@
                 <items>
                     <MenuItem mnemonicParsing="false" onAction="#onShowProtocols" text="Протоколы" />
                     <MenuItem mnemonicParsing="false" onAction="#onShowOvPlat" text="Получатели платежей" />
+                    <MenuItem mnemonicParsing="false" onAction="#onShowSendQueue" text="Очередь платежей на отправку" />
+                    <MenuItem mnemonicParsing="false" onAction="#onShowSheduleTable" text="Расписание рассылки платежей" />
                 </items>
             </Menu>
         </menus>
@@ -42,7 +45,14 @@
 <JInvTableColumn fx:id="CURL" text="%CURL" fieldName="CURL" prefWidth="300.0" />
 <JInvTableColumn fx:id="PROTOCOL" text="%PROTOCOL" fieldName="PROTOCOL"  />
 <JInvTableColumn fx:id="PERSINFOXPATH" text="%PERSINFOXPATH" fieldName="PERSINFOXPATH" />
+<JInvTableColumn fx:id="SELLERXPATH" text="%SELLERXPATH" fieldName="SELLERXPATH" />
 <JInvTableColumnBigDecimal fx:id="IDOV_PLAT" text="%IDOV_PLAT" fieldName="IDOV_PLAT"  />
+<JInvTableColumn prefWidth="450.0" text="%VALIDATION" idF7FilterGroup="F7PAYER_GROUP">
+    <columns>
+        <JInvTableColumn fx:id="COMPARISONURL" text="%COMPARISONURL" fieldName="COMPARISONURL" prefWidth="200"/>
+        <JInvTableColumn fx:id="PAYELEMENTIDS" text="%PAYELEMENTIDS" fieldName="PAYELEMENTIDS" prefWidth="200"/>
+    </columns>
+</JInvTableColumn>
 </columns>
 <VBox.margin>
 <Insets bottom="5.0" left="5.0" right="5.0" />

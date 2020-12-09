@@ -30,6 +30,13 @@
             <scope>system</scope>
             <systemPath>I:/JAPP/FXbicomp.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>ru.inversion</groupId>
+            <artifactId>fxpdoc</artifactId>
+            <version>MERGED</version>
+            <scope>system</scope>
+            <systemPath>I:/JAPP/FXpdoc.jar</systemPath>
+        </dependency>
 
     </dependencies>
     <build>
@@ -51,8 +58,8 @@
                     <archive>
                         <manifestEntries>
                             <Built-By>Valeriy Bugaev</Built-By>
-                            <Class-Path>JInvFore.jar FXbicomp.jar</Class-Path>
-                            <Implementation-Version>${version} ${maven.build.timestamp}</Implementation-Version>
+                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar</Class-Path>
+                            <Implementation-Version>${project.version} ${maven.build.timestamp}</Implementation-Version>
                         </manifestEntries>
                         <manifest>
                             <mainClass>ru.inversionkavkaz.dnrwsadm.App</mainClass>
@@ -66,8 +73,8 @@
                     <archive>
                         <manifestEntries>
                             <Built-By>Valeriy Bugaev</Built-By>
-                            <Class-Path>JInvFore.jar FXbicomp.jar</Class-Path>
-                            <Implementation-Version>${version} ${maven.build.timestamp}</Implementation-Version>
+                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar</Class-Path>
+                            <Implementation-Version>${project.version} ${maven.build.timestamp}</Implementation-Version>
                         </manifestEntries>
                         <manifest>
                             <mainClass>ru.inversionkavkaz.dnrwsadm.App</mainClass>

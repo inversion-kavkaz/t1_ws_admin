@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrSendController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblI_ID" text="%I_ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvLongField fx:id="I_ID" maxWidth="-Infinity" prefColumnCount="12" fieldName="I_ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblDATECREATE" text="%DATECREATE" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvTextField fx:id="DATECREATE" fieldName="DATECREATE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblSYSTEM_ID" text="%SYSTEM_ID" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="SYSTEM_ID" prefColumnCount="50" fieldName="SYSTEM_ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<JInvLabel fx:id="lblDEAL_ID" text="%DEAL_ID" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+<JInvLongField fx:id="DEAL_ID" maxWidth="-Infinity" prefColumnCount="12" fieldName="DEAL_ID" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+<JInvLabel fx:id="lblOPERTYPE" text="%OPERTYPE" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+<JInvTextField fx:id="OPERTYPE" maxWidth="-Infinity" prefColumnCount="16" fieldName="OPERTYPE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+<JInvLabel fx:id="lblSUM" text="%SUM" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+<JInvTextField fx:id="SUM" maxWidth="-Infinity" prefColumnCount="16" fieldName="SUM" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+<JInvLabel fx:id="lblACCOUNT" text="%ACCOUNT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+<JInvTextField fx:id="ACCOUNT" maxWidth="-Infinity" prefColumnCount="25" fieldName="ACCOUNT" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+<JInvLabel fx:id="lblPAY_ID" text="%PAY_ID" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+<JInvLongField fx:id="PAY_ID" maxWidth="-Infinity" prefColumnCount="12" fieldName="PAY_ID" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+<JInvLabel fx:id="lblTRADE_POINT" text="%TRADE_POINT" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+<JInvTextField fx:id="TRADE_POINT" fieldName="TRADE_POINT" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+<JInvLabel fx:id="lblACCOUNT_KIND" text="%ACCOUNT_KIND" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+<JInvLongField fx:id="ACCOUNT_KIND" maxWidth="-Infinity" prefColumnCount="5" fieldName="ACCOUNT_KIND" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+<JInvLabel fx:id="lblATTEMPT_NUM" text="%ATTEMPT_NUM" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+<JInvLongField fx:id="ATTEMPT_NUM" maxWidth="-Infinity" prefColumnCount="0" fieldName="ATTEMPT_NUM" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+<JInvLabel fx:id="lblLAST_RUN_DATE" text="%LAST_RUN_DATE" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+<JInvTextField fx:id="LAST_RUN_DATE" fieldName="LAST_RUN_DATE" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+<JInvLabel fx:id="lblLAST_RESULTCODE" text="%LAST_RESULTCODE" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+<JInvLongField fx:id="LAST_RESULTCODE" maxWidth="-Infinity" prefColumnCount="0" fieldName="LAST_RESULTCODE" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+<JInvLabel fx:id="lblLAST_RESULTDATE" text="%LAST_RESULTDATE" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+<JInvTextField fx:id="LAST_RESULTDATE" fieldName="LAST_RESULTDATE" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+<JInvLabel fx:id="lblLAST_RESULTMESSAGE" text="%LAST_RESULTMESSAGE" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+<JInvTextField fx:id="LAST_RESULTMESSAGE" prefColumnCount="50" fieldName="LAST_RESULTMESSAGE" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+<JInvLabel fx:id="lblIS_FINAL_RESULT" text="%IS_FINAL_RESULT" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+<JInvLongField fx:id="IS_FINAL_RESULT" maxWidth="-Infinity" prefColumnCount="0" fieldName="IS_FINAL_RESULT" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+<JInvLabel fx:id="lblNEXT_RUN_DATE" text="%NEXT_RUN_DATE" GridPane.columnIndex="0" GridPane.rowIndex="16" />
+<JInvTextField fx:id="NEXT_RUN_DATE" fieldName="NEXT_RUN_DATE" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+<JInvLabel fx:id="lblIS_ACTIVE" text="%IS_ACTIVE" GridPane.columnIndex="0" GridPane.rowIndex="17" />
+<JInvLongField fx:id="IS_ACTIVE" maxWidth="-Infinity" prefColumnCount="0" fieldName="IS_ACTIVE" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+</children>
+<columnConstraints>
+<ColumnConstraints />
+<ColumnConstraints hgrow="ALWAYS" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0"/>
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import ru.inversion.fx.form.controls.JInvButton?>
+<?import ru.inversion.fx.form.controls.JInvLabel?>
+<?import ru.inversion.fx.form.controls.JInvLongField?>
+
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.EditIkOvDnrSheduleController">
+<children>
+<GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+<children>
+<JInvLabel fx:id="lblATTEMPT" text="%ATTEMPT" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+<JInvLongField fx:id="ATTEMPT" fieldName="ATTEMPT" maxWidth="-Infinity" prefColumnCount="0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<JInvLabel fx:id="lblSHIFT_MINUTES" text="%SHIFT_MINUTES" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+<JInvLongField fx:id="SHIFT_MINUTES" fieldName="SHIFT_MINUTES" maxWidth="-Infinity" prefColumnCount="0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+</children>
+<columnConstraints>
+<ColumnConstraints maxWidth="118.0" minWidth="100.0" prefWidth="118.0" />
+<ColumnConstraints hgrow="ALWAYS" maxWidth="101.0" minWidth="83.0" prefWidth="83.0" />
+</columnConstraints>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<rowConstraints>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0" />
+</rowConstraints>
+</GridPane>
+<ButtonBar buttonMinWidth="80.0">
+<buttons>
+<JInvButton fx:id="btOK" text="%EDIT.OK" />
+<JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+</buttons>
+</ButtonBar>
+</children>
+<padding>
+<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+</padding>
+</VBox>
