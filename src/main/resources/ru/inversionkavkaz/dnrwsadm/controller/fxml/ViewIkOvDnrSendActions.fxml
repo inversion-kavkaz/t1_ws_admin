@@ -10,7 +10,7 @@
 <JInvTable fx:id="IK_OV_DNR_SEND_ACTIONS" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
 <columns>
 <JInvTableColumn fx:id="ID" text="%ID" fieldName="ID"  />
-<JInvTableColumnDate fx:id="DCREATE" text="%DCREATE" fieldName="DCREATE"  />
+<JInvTableColumnDate fx:id="DCREATE" text="%DCREATE" fieldName="DCREATE" dateFormat="DATE_TIME_DETAIL" />
 <JInvTableColumn fx:id="ACTIONTYPE" text="%ACTIONTYPE" fieldName="ACTIONTYPE"  />
 <JInvTableColumn fx:id="MESSAGE" text="%MESSAGE" fieldName="MESSAGE" prefWidth="300.0" />
 <JInvTableColumn fx:id="CUSRLOGNAME" text="%CUSRLOGNAME" fieldName="CUSRLOGNAME"  />

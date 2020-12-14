@@ -4,15 +4,15 @@
 <?import ru.inversion.fx.form.controls.*?>
 <?import ru.inversion.fx.form.controls.dsbar.DSInfoBar?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.control.Separator?>
+
 <VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.controller.ViewIkOvDnrSendController">
 <children>
 <JInvToolBar fx:id="toolBar" />
 <JInvTable fx:id="IK_OV_DNR_SEND" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
 <columns>
 <JInvTableColumn fx:id="I_ID" text="%I_ID" fieldName="I_ID"  />
-<JInvTableColumnDate fx:id="DATECREATE" text="%DATECREATE" fieldName="DATECREATE"  />
+<JInvTableColumnDate fx:id="DATECREATE" text="%DATECREATE" fieldName="DATECREATE"  dateFormat="DATE_TIME_DETAIL" />
 <JInvTableColumn fx:id="SYSTEM_ID" text="%SYSTEM_ID" fieldName="SYSTEM_ID" prefWidth="300.0" lovClassName="ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrService"/>
 <JInvTableColumn fx:id="DEAL_ID" text="%DEAL_ID" fieldName="DEAL_ID"  />
 <JInvTableColumn fx:id="OPERTYPE" text="%OPERTYPE" fieldName="OPERTYPE"  />
@@ -22,12 +22,12 @@
 <JInvTableColumn fx:id="TRADE_POINT" text="%TRADE_POINT" fieldName="TRADE_POINT"  />
 <JInvTableColumn fx:id="ACCOUNT_KIND" text="%ACCOUNT_KIND" fieldName="ACCOUNT_KIND"  />
 <JInvTableColumn fx:id="ATTEMPT_NUM" text="%ATTEMPT_NUM" fieldName="ATTEMPT_NUM"  />
-<JInvTableColumnDate fx:id="LAST_RUN_DATE" text="%LAST_RUN_DATE" fieldName="LAST_RUN_DATE"  />
+<JInvTableColumnDate fx:id="LAST_RUN_DATE" text="%LAST_RUN_DATE" fieldName="LAST_RUN_DATE" dateFormat="DATE_TIME_DETAIL" />
 <JInvTableColumn fx:id="LAST_RESULTCODE" text="%LAST_RESULTCODE" fieldName="LAST_RESULTCODE"  />
 <JInvTableColumnDate fx:id="LAST_RESULTDATE" text="%LAST_RESULTDATE" fieldName="LAST_RESULTDATE"  />
 <JInvTableColumn fx:id="LAST_RESULTMESSAGE" text="%LAST_RESULTMESSAGE" fieldName="LAST_RESULTMESSAGE" prefWidth="300.0" />
 <JInvTableColumn fx:id="IS_FINAL_RESULT" text="%IS_FINAL_RESULT" fieldName="IS_FINAL_RESULT"  />
-<JInvTableColumnDate fx:id="NEXT_RUN_DATE" text="%NEXT_RUN_DATE" fieldName="NEXT_RUN_DATE"  />
+<JInvTableColumnDate fx:id="NEXT_RUN_DATE" text="%NEXT_RUN_DATE" fieldName="NEXT_RUN_DATE" dateFormat="DATE_TIME_DETAIL"  />
 <JInvTableColumn fx:id="IS_ACTIVE" text="%IS_ACTIVE" fieldName="IS_ACTIVE"  />
 </columns>
 <VBox.margin>
