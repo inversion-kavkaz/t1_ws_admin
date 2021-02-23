@@ -37,7 +37,13 @@
             <scope>system</scope>
             <systemPath>I:/JAPP/FXpdoc.jar</systemPath>
         </dependency>
-
+        <dependency>
+            <groupId>ru.inversionkavkaz.payverifierscore</groupId>
+            <artifactId>core</artifactId>
+            <version>MERGED</version>
+            <scope>system</scope>
+            <systemPath>I:/JAPP/core-1.0-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+        </dependency>
     </dependencies>
     <build>
         <finalName>WebServicesAdmin</finalName>
@@ -58,7 +64,7 @@
                     <archive>
                         <manifestEntries>
                             <Built-By>Valeriy Bugaev</Built-By>
-                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar</Class-Path>
+                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar core-1.0-SNAPSHOT-jar-with-dependencies.jar</Class-Path>
                             <Implementation-Version>${project.version} ${maven.build.timestamp}</Implementation-Version>
                         </manifestEntries>
                         <manifest>
@@ -73,7 +79,7 @@
                     <archive>
                         <manifestEntries>
                             <Built-By>Valeriy Bugaev</Built-By>
-                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar</Class-Path>
+                            <Class-Path>JInvFore.jar FXbicomp.jar fxpdoc.jar core-1.0-SNAPSHOT-jar-with-dependencies.jar</Class-Path>
                             <Implementation-Version>${project.version} ${maven.build.timestamp}</Implementation-Version>
                         </manifestEntries>
                         <manifest>

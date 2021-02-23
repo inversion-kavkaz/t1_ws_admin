@@ -3,6 +3,7 @@ package ru.inversionkavkaz.dnrwsadm.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import ru.inversion.dataset.mark.*;
+import ru.inversionkavkaz.dnrwsadm.utils.LovInterface;
 
 /**
 @author  porche
@@ -10,7 +11,7 @@ import ru.inversion.dataset.mark.*;
 */
 @Entity (name="ru.inversionkavkaz.dnrwsabm.entity.PIkOvDnrService")
 @Table (name="IK_OV_DNR_SERVICE")
-public class PIkOvDnrService extends UMarkable implements Serializable
+public class PIkOvDnrService extends UMarkable implements Serializable, LovInterface
 {
     private static final long serialVersionUID = 07_02_2020_13_05_51l;
 
@@ -116,5 +117,15 @@ public class PIkOvDnrService extends UMarkable implements Serializable
     @Override
     public boolean isMark() {
         return super.isMark();
+    }
+
+    @Override
+    public Object getKey() {
+        return getCNAME();
+    }
+
+    @Override
+    public Object getValue() {
+        return getCDESCRIPTION();
     }
 }

@@ -30,6 +30,7 @@
                     <MenuItem mnemonicParsing="false" onAction="#onShowOvPlat" text="Получатели платежей" />
                     <MenuItem mnemonicParsing="false" onAction="#onShowSendQueue" text="Очередь платежей на отправку" />
                     <MenuItem mnemonicParsing="false" onAction="#onShowSheduleTable" text="Расписание рассылки платежей" />
+                    <MenuItem mnemonicParsing="false" onAction="#onShowVerifyReestr" text="Журнал online сверки платежей" />
                 </items>
             </Menu>
         </menus>

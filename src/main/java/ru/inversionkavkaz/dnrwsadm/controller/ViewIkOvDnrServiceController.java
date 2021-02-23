@@ -20,6 +20,7 @@ import ru.inversion.fx.form.controls.*;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrPayLog;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrService;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrShedule;
+import ru.inversionkavkaz.dnrwsadm.entity.PVerifyRequest;
 import ru.inversionkavkaz.dnrwsadm.ovplat.controller.ViewOvPlatController;
 import ru.inversionkavkaz.dnrwsadm.ovplat.entity.POvPlat;
 import ru.inversionkavkaz.dnrwsadm.protocol.controller.ViewIkOvDnrServiceProtocolController;
@@ -27,6 +28,7 @@ import ru.inversionkavkaz.dnrwsadm.protocol.entity.PIkOvDnrServiceProtocol;
 import ru.inversionkavkaz.dnrwsadm.utils.AltPrintReportType;
 import ru.inversionkavkaz.dnrwsadm.utils.ButtonUtils;
 import ru.inversionkavkaz.dnrwsadm.utils.DbUtils;
+import ru.inversionkavkaz.dnrwsadm.vrfreq.controller.ViewVIkVrfReqController;
 
 import java.util.function.BiConsumer;
 
@@ -111,6 +113,7 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
         toolBar.getItems().add(altPrint);
     }
 
+
     private void onShowServiceParams(Event event) {
         if (dsIK_OV_DNR_SERVICE.getCurrentRow() == null) return;
         final String cSystemName  = dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME();
@@ -138,6 +141,7 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
                 .modal(true)
                 .show();
     }
+
 
     private void prePrintAp(ApReport apReport) {
         String p1 = dsIK_OV_DNR_SERVICE.getCurrentRow() == null ? "" : dsIK_OV_DNR_SERVICE.getCurrentRow().getCNAME();
@@ -261,6 +265,13 @@ public class ViewIkOvDnrServiceController extends JInvFXBrowserController
 
     public void onShowSheduleTable(ActionEvent actionEvent) {
         new FXFormLauncher<PIkOvDnrShedule>(getTaskContext(), getViewContext(), ViewIkOvDnrSheduleController.class)
+                .dialogMode(FormModeEnum.VM_SHOW)
+                .modal(true)
+                .show();
+    }
+
+    public void onShowVerifyReestr(ActionEvent actionEvent) {
+        new FXFormLauncher<PVerifyRequest>(getTaskContext(), getViewContext(), ViewVIkVrfReqController.class)
                 .dialogMode(FormModeEnum.VM_SHOW)
                 .modal(true)
                 .show();

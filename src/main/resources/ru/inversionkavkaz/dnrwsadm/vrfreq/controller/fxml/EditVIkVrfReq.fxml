@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import ru.inversion.fx.form.controls.JInvButton?>
+<?import ru.inversion.fx.form.controls.JInvCalendarTime?>
+<?import ru.inversion.fx.form.controls.JInvComboBox?>
+<?import ru.inversion.fx.form.controls.JInvLabel?>
+<?import ru.inversion.fx.form.controls.JInvLongField?>
+<?import ru.inversion.fx.form.controls.JInvTextField?>
+
+<VBox prefHeight="208.0" prefWidth="713.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.vrfreq.controller.EditVIkVrfReqController">
+    <children>
+        <GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+            <children>
+                <JInvLabel fx:id="lblID" text="%ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <JInvLongField fx:id="ID" disable="true" fieldName="ID" maxWidth="-Infinity" prefColumnCount="0" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <JInvLabel fx:id="lblSERVICENAME" text="%SERVICENAME" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <JInvTextField fx:id="SERVICENAME" fieldName="SERVICENAME" prefHeight="25.0" prefWidth="152.0" />
+                        <JInvTextField fx:id="SERVICEDESCRIPTION" disable="true" fieldName="SERVICEDESCRIPTION" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></JInvTextField>
+                    </children>
+                </HBox>
+                <JInvLabel fx:id="lblDATESTART" text="%DATESTART" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <JInvCalendarTime fx:id="DATESTART" fieldName="DATESTART" mask="dd.MM.yyyy HH:mm:ss" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <JInvLabel fx:id="lblDATEEND" text="%DATEEND" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <JInvCalendarTime fx:id="DATEEND" fieldName="DATEEND" mask="dd.MM.yyyy HH:mm:ss" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <JInvLabel fx:id="lblPAYELEMENTID" text="%PAYELEMENTID" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <JInvComboBox fx:id="PAYELEMENTID" fieldName="PAYELEMENTID" maxWidth="-Infinity" prefHeight="25.0" prefWidth="151.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints minHeight="1.0" />
+            </rowConstraints>
+        </GridPane>
+        <ButtonBar buttonMinWidth="80.0">
+            <buttons>
+                <JInvButton fx:id="btOK" text="%EDIT.OK" />
+                <JInvButton fx:id="btCancel" text="%EDIT.CANCEL" />
+            </buttons>
+        </ButtonBar>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>

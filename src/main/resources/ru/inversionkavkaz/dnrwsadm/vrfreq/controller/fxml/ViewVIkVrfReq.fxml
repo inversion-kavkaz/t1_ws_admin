@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import ru.inversion.fx.form.controls.*?>
+<?import ru.inversion.fx.form.controls.dsbar.DSInfoBar?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="800.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.vrfreq.controller.ViewVIkVrfReqController">
+<children>
+<JInvToolBar fx:id="toolBar" />
+<JInvTable fx:id="V_IK_VRF_REQ" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+<columns>
+<JInvTableColumn fx:id="ID" text="%ID" fieldName="ID"  />
+<JInvTableColumnDate fx:id="DCREATE" text="%DCREATE" fieldName="DCREATE" />
+<JInvTableColumn fx:id="SERVICENAME" text="%SERVICENAME" fieldName="SERVICENAME"  lovClassName="ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrService"/>
+<JInvTableColumnDate fx:id="DATESTART" text="%DATESTART" fieldName="DATESTART"  dateFormat="DATE_TIME_DETAIL"/>
+<JInvTableColumnDate fx:id="DATEEND" text="%DATEEND" fieldName="DATEEND"  dateFormat="DATE_TIME_DETAIL"/>
+<JInvTableColumn fx:id="PAYELEMENTID" text="%PAYELEMENTID" fieldName="PAYELEMENTID"  />
+<JInvTableColumn fx:id="STATUS" text="%STATUS" fieldName="STATUS"  />
+<JInvTableColumnDate fx:id="STATUSDATE" text="%STATUSDATE" fieldName="STATUSDATE"  />
+<JInvTableColumn fx:id="STATUSINFO" text="%STATUSINFO" fieldName="STATUSINFO" prefWidth="300.0" />
+<JInvTableColumn fx:id="RESPONCE_EXISTS" text="%RESPONCE_EXISTS" fieldName="RESPONCE_EXISTS"  />
+<JInvTableColumn fx:id="REPORTDATA_EXISTS" text="%REPORTDATA_EXISTS" fieldName="REPORTDATA_EXISTS"  />
+<JInvTableColumn fx:id="FILENAME" text="%FILENAME" fieldName="FILENAME" prefWidth="300.0" />
+<JInvTableColumn fx:id="SAVEDUSR" text="%SAVEDUSR" fieldName="SAVEDUSR"  lovClassName="ru.inversion.bicomp.lov.PUsrLov"/>
+<JInvTableColumnDate fx:id="SAVEDDATE" text="%SAVEDDATE" fieldName="SAVEDDATE"  />
+</columns>
+<VBox.margin>
+<Insets left="5.0" right="5.0" />
+</VBox.margin>
+</JInvTable>
+<DSInfoBar fx:id="V_IK_VRF_REQ$MARK">
+<VBox.margin>
+<Insets bottom="5.0" left="5.0" right="5.0" />
+</VBox.margin>
+</DSInfoBar>
+</children>
+</VBox>
