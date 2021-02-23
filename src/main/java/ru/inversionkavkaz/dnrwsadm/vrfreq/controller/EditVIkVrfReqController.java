@@ -111,7 +111,8 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
                 programOption.cpsevdo = getDataObject().getSERVICENAME();//  "VRF";
                 programOption.dateStart = getDataObject().getDATESTART().format(formatter);// "20190101235959";
                 programOption.dateEnd = getDataObject().getDATEEND().format(formatter);//"20201118235959";
-                programOption.payElementID = getDataObject().getPAYELEMENTID().toString();
+                if(getDataObject().getPAYELEMENTID()!=null)
+                    programOption.payElementID = getDataObject().getPAYELEMENTID().toString();
                 programOption.transactionID =  getDataObject().getID().toString();//"7";
                 programOption.reportOutDir = "X"; //не выгружать отчет, только сформировать
                 String result = (String) method.invoke(starter, programOption);
@@ -145,7 +146,7 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
         if(payVerifierTask!=null && payVerifierTask.getException()!=null)
             errorMessage+=payVerifierTask.getException().getMessage();
         System.out.println(errorMessage);
-        Alerts.error(this, "Выполнение внешнего процесса сверкиЖ","Ошибка при выполнении внешнего процесса сверки",errorMessage);
+        Alerts.error(this, "Выполнение внешнего процесса сверки","Ошибка при выполнении внешнего процесса сверки",errorMessage);
 
         if(payVerifierTask!=null && payVerifierTask.getException()!=null && payVerifierTask.getException().getClass()==RuntimeException.class)
             closeNow (FormReturnEnum.RET_OK);
