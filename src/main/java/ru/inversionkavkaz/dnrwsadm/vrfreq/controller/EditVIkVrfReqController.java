@@ -20,6 +20,10 @@ import ru.inversionkavkaz.dnrwsadm.vrfreq.entity.PVIkVrfReq;
 import ru.inversionkavkaz.payverifierscore.ProgramOption;
 import ru.inversionkavkaz.payverifierscore.Starter;
 
+import java.io.File;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
@@ -102,14 +106,18 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
         payVerifierTask = new BiCompTask() {
             @Override
             protected Object call() throws Exception {
-                System.out.println("in call 1");
-                Class<ru.inversionkavkaz.payverifierscore.Starter> clazz = (Class<Starter>) Class.forName("ru.inversionkavkaz.citypayverifier.Main");
-                System.out.println("in call 2");
+                System.out.println("call 1");
+                File file = new File("i://japp//citypayverifier-1.0-SNAPSHOT-jar-with-dependencies.jar");
+                System.out.println("call 2");
+                URLClassLoader child = new URLClassLoader (new URL[] {file.toURI().toURL()}, ClassLoader.getSystemClassLoader());
+                System.out.println("call 3");
+                Class<ru.inversionkavkaz.payverifierscore.Starter> clazz = (Class<Starter>) Class.forName("ru.inversionkavkaz.citypayverifier.Main", true, child);
                 ru.inversionkavkaz.payverifierscore.Starter starter = clazz.newInstance();
-                System.out.println("in call 3");
-                java.lang.reflect.Method method;
-                method = starter.getClass().getMethod("send", ru.inversionkavkaz.payverifierscore.ProgramOption.class);
-                System.out.println("in call 4");
+
+                System.out.println("call 4");
+                java.lang.reflect.Method method = starter.getClass().getMethod("send", ru.inversionkavkaz.payverifierscore.ProgramOption.class);
+                System.out.println("call 5");
+
                 ProgramOption programOption = new ProgramOption();
                 programOption.connection = connectionString;// "xxi/NEW8I@odb12";
                 programOption.cpsevdo = getDataObject().getSERVICENAME();//  "VRF";
@@ -119,13 +127,51 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
                     programOption.payElementID = getDataObject().getPAYELEMENTID().toString();
                 programOption.transactionID =  getDataObject().getID().toString();//"7";
                 programOption.reportOutDir = "X"; //не выгружать отчет, только сформировать
-                System.out.println("in call 5");
+
+                System.out.println("call 6");
                 String result = (String) method.invoke(starter, programOption);
-                System.out.println("in call 6");
+                System.out.println("call 7");
+
                 System.out.println("result="+result);
                 if(result!=null){
                     throw new RuntimeException("Ошибка внешнего процесса: " + result);
                 }
+
+
+//                Object instance = classToLoad.newInstance();
+//                Object result = method.invoke(instance);
+
+//                Class classToLoad = Class.forName("ru.inversionkavkaz.citypayverifier.Main", true, child);
+//                Method method = classToLoad.getDeclaredMethod("myMethod");
+//                Object instance = classToLoad.newInstance();
+//                Object result = method.invoke(instance);
+
+
+//                System.out.println("in call 1");
+//                Class<ru.inversionkavkaz.payverifierscore.Starter> clazz = (Class<Starter>) Class.forName("ru.inversionkavkaz.citypayverifier.Main");
+//                System.out.println("in call 2");
+//                ru.inversionkavkaz.payverifierscore.Starter starter = clazz.newInstance();
+//                System.out.println("in call 3");
+//                java.lang.reflect.Method method;
+//                method = starter.getClass().getMethod("send", ru.inversionkavkaz.payverifierscore.ProgramOption.class);
+//                System.out.println("in call 4");
+//                ProgramOption programOption = new ProgramOption();
+//                programOption.connection = connectionString;// "xxi/NEW8I@odb12";
+//                programOption.cpsevdo = getDataObject().getSERVICENAME();//  "VRF";
+//                programOption.dateStart = getDataObject().getDATESTART().format(formatter);// "20190101235959";
+//                programOption.dateEnd = getDataObject().getDATEEND().format(formatter);//"20201118235959";
+//                if(getDataObject().getPAYELEMENTID()!=null)
+//                    programOption.payElementID = getDataObject().getPAYELEMENTID().toString();
+//                programOption.transactionID =  getDataObject().getID().toString();//"7";
+//                programOption.reportOutDir = "X"; //не выгружать отчет, только сформировать
+//                System.out.println("in call 5");
+//                String result = (String) method.invoke(starter, programOption);
+//                System.out.println("in call 6");
+//                System.out.println("result="+result);
+////                String result =  new ru.inversionkavkaz.citypayverifier.Main().send(programOption);
+//                if(result!=null){
+//                    throw new RuntimeException("Ошибка внешнего процесса: " + result);
+//                }
                 return this;
             }
         };
