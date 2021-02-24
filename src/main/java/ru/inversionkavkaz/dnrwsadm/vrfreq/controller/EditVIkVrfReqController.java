@@ -102,10 +102,14 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
         payVerifierTask = new BiCompTask() {
             @Override
             protected Object call() throws Exception {
+                System.out.println("in call 1");
                 Class<ru.inversionkavkaz.payverifierscore.Starter> clazz = (Class<Starter>) Class.forName("ru.inversionkavkaz.citypayverifier.Main");
+                System.out.println("in call 2");
                 ru.inversionkavkaz.payverifierscore.Starter starter = clazz.newInstance();
+                System.out.println("in call 3");
                 java.lang.reflect.Method method;
                 method = starter.getClass().getMethod("send", ru.inversionkavkaz.payverifierscore.ProgramOption.class);
+                System.out.println("in call 4");
                 ProgramOption programOption = new ProgramOption();
                 programOption.connection = connectionString;// "xxi/NEW8I@odb12";
                 programOption.cpsevdo = getDataObject().getSERVICENAME();//  "VRF";
@@ -115,7 +119,9 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
                     programOption.payElementID = getDataObject().getPAYELEMENTID().toString();
                 programOption.transactionID =  getDataObject().getID().toString();//"7";
                 programOption.reportOutDir = "X"; //не выгружать отчет, только сформировать
+                System.out.println("in call 5");
                 String result = (String) method.invoke(starter, programOption);
+                System.out.println("in call 6");
                 System.out.println("result="+result);
                 if(result!=null){
                     throw new RuntimeException("Ошибка внешнего процесса: " + result);
