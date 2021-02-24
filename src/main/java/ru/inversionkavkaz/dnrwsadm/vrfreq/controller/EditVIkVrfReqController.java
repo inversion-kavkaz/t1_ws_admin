@@ -134,8 +134,10 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
     private void onCancelled(Event event) {
         setState (StateEnum.ACTIVE);
         String errorMessage = "Внешний процесс сверки приостановлен. ";
-        if(payVerifierTask!=null && payVerifierTask.getException()!=null&&payVerifierTask.getException().getMessage()!=null)
+        if(payVerifierTask!=null && payVerifierTask.getException()!=null&&payVerifierTask.getException().getMessage()!=null){
             errorMessage+=this.getException().getMessage();
+            payVerifierTask.getException().printStackTrace();
+        }
         System.out.println(errorMessage);
         Alerts.error(this, "Выполнение внешнего процесса сверкиЖ","Ошибка при выполнении внешнего процесса сверки",errorMessage);
     }
@@ -143,8 +145,10 @@ public class EditVIkVrfReqController extends JInvFXFormController <PVIkVrfReq>
     private void onFailed(Event event) {
         setState (StateEnum.ACTIVE);
         String errorMessage = "Внешний процесс сверки завершен с ошибкой. ";
-        if(payVerifierTask!=null && payVerifierTask.getException()!=null)
+        if(payVerifierTask!=null && payVerifierTask.getException()!=null){
             errorMessage+=payVerifierTask.getException().getMessage();
+            payVerifierTask.getException().printStackTrace();
+        }
         System.out.println(errorMessage);
         Alerts.error(this, "Выполнение внешнего процесса сверки","Ошибка при выполнении внешнего процесса сверки",errorMessage);
 

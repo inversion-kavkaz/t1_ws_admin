@@ -168,7 +168,7 @@ public class ViewVIkVrfReqController extends JInvFXBrowserController {
     }
 
     private void onShowReport(Event event) {
-        if (dsV_IK_VRF_REQ.getCurrentRow() == null || !dsV_IK_VRF_REQ.getCurrentRow().getREPORTDATA_EXISTS().equals("Y")) {
+        if (dsV_IK_VRF_REQ.getCurrentRow() == null || !dsV_IK_VRF_REQ.getCurrentRow().getREPORTDATA_EXISTS()) {
             Alerts.error(this,"Данные отсутствуют.");
             return;
         }
