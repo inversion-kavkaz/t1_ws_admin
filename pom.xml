@@ -8,6 +8,14 @@
     <artifactId>dnrwsadm</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <slf4j.version>1.7.25</slf4j.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <compile.java.version>1.7</compile.java.version>
+        <jaxb.version>2.1</jaxb.version>
+    </properties>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
         <dependency>
@@ -43,6 +51,7 @@
             <scope>system</scope>
             <systemPath>I:/JAPP/FXpdoc.jar</systemPath>
         </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>ru.inversionkavkaz.payverifierscore</groupId>-->
 <!--            <artifactId>core</artifactId>-->

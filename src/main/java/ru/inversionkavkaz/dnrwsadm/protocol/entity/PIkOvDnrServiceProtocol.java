@@ -21,6 +21,8 @@ public class PIkOvDnrServiceProtocol implements Serializable, LovInterface
 
     private String CPROTOCOL;
     private String CDESCR;
+    private String CVRFCLASSNAME;
+    private String CVRFJARFILEPATH;
 
     public PIkOvDnrServiceProtocol(){}
 
@@ -38,6 +40,20 @@ public class PIkOvDnrServiceProtocol implements Serializable, LovInterface
     }
     public void setCDESCR(String val) {
         CDESCR = val; 
+    }
+    @Column(name="CVRFCLASSNAME",length = 255)
+    public String getCVRFCLASSNAME() {
+        return CVRFCLASSNAME;
+    }
+    public void setCVRFCLASSNAME(String CVRFCLASSNAME) {
+        this.CVRFCLASSNAME = CVRFCLASSNAME;
+    }
+    @Column(name="CVRFJARFILEPATH",length = 255)
+    public String getCVRFJARFILEPATH() {
+        return CVRFJARFILEPATH;
+    }
+    public void setCVRFJARFILEPATH(String CVRFJARFILEPATH) {
+        this.CVRFJARFILEPATH = CVRFJARFILEPATH;
     }
 
     @Override

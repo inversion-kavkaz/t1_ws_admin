@@ -1,10 +1,11 @@
 package ru.inversionkavkaz.dnrwsadm.vrfreq.controller;
 
 import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.Event;
 import javafx.util.Callback;
 import ru.inversion.bicomp.control.fxtask.BiCompTask;
+import ru.inversion.dataset.DataSetException;
+import ru.inversion.dataset.XXIDataSet;
 import ru.inversion.fx.form.Alerts;
 import ru.inversion.fx.form.JInvFXFormController;
 import ru.inversion.fx.form.StateEnum;
@@ -13,8 +14,7 @@ import javafx.fxml.FXML;
 import ru.inversion.fx.form.lov.JInvEntityLov;
 import ru.inversion.utils.ConnectionStringFormatEnum;
 import ru.inversionkavkaz.dnrwsadm.entity.PIkOvDnrService;
-import ru.inversionkavkaz.dnrwsadm.entity.PVerifyRequest;
-import ru.inversionkavkaz.dnrwsadm.utils.DbUtils;
+import ru.inversionkavkaz.dnrwsadm.protocol.entity.PIkOvDnrServiceProtocol;
 import ru.inversionkavkaz.dnrwsadm.utils.LovUtils;
 import ru.inversionkavkaz.dnrwsadm.vrfreq.entity.PVIkVrfReq;
 
@@ -32,17 +32,16 @@ import java.util.ResourceBundle;
  * @since Mon Feb 15 16:50:47 MSK 2021
  */
 public class EditVIkVrfReqController extends JInvFXFormController<PVIkVrfReq> {
-    //    @FXML JInvLongField ID;
+//    @FXML JInvLongField ID;
 //    @FXML JInvTextField DCREATE;
     @FXML
     JInvTextField SERVICENAME;
     @FXML
     JInvTextField SERVICEDESCRIPTION;
-    //    @FXML JInvTextField DATESTART;
+//    @FXML JInvTextField DATESTART;
 //    @FXML JInvTextField DATEEND;
     @FXML
     JInvComboBox PAYELEMENTID;
-
 
 //    @FXML JInvTextField STATUS;
 //    @FXML JInvTextField STATUSDATE;
@@ -52,8 +51,10 @@ public class EditVIkVrfReqController extends JInvFXFormController<PVIkVrfReq> {
 //    @FXML JInvTextField FILENAME;
 //    @FXML JInvTextField SAVEDUSR;
 //    @FXML JInvTextField SAVEDDATE;
-
+    private final XXIDataSet<PIkOvDnrServiceProtocol> serviceProtocolXXIDataSet = new XXIDataSet<>();
     Task payVerifierTask = null;
+
+
 //
 // Initializes the controller class.
 //
@@ -61,7 +62,13 @@ public class EditVIkVrfReqController extends JInvFXFormController<PVIkVrfReq> {
     @Override
     protected void init() throws Exception {
         super.init();
+        initDataSet();
         initLov();
+    }
+
+    private void initDataSet() throws Exception {
+        serviceProtocolXXIDataSet.setTaskContext(getTaskContext());
+        serviceProtocolXXIDataSet.setRowClass(PIkOvDnrServiceProtocol.class);
     }
 
     private void initLov() {
@@ -69,17 +76,20 @@ public class EditVIkVrfReqController extends JInvFXFormController<PVIkVrfReq> {
                 ResourceBundle.getBundle("ru/inversionkavkaz/dnrwsadm/vrfreq/controller/res/PIkOvDnrService"));
         lov.checkValue(getDataObject().getSERVICENAME(), true);
         lov.setWherePredicat("COMPARISONURL is not null");
-        lov.bindControl(PAYELEMENTID, new Callback<PIkOvDnrService, Object>() {
-            @Override
-            public Object call(PIkOvDnrService ikOvDnrService) {
-                PAYELEMENTID.getItems().clear();
-                if (ikOvDnrService.getPAYELEMENTIDS() != null) {
-                    PAYELEMENTID.getItems().addAll(ikOvDnrService.getPAYELEMENTIDS().split(","));
-                }
-                PAYELEMENTID.setDisable(PAYELEMENTID.getItems().isEmpty());
-                PAYELEMENTID.setRequired(!PAYELEMENTID.getItems().isEmpty());
-                return null;
+        lov.bindControl(PAYELEMENTID, ikOvDnrService -> {
+            serviceProtocolXXIDataSet.setWherePredicat(String.format("CPROTOCOL='%s'", ikOvDnrService.getPROTOCOL()));
+            try {
+                serviceProtocolXXIDataSet.executeQuery(true);
+            } catch (DataSetException e) {
+                e.printStackTrace();
             }
+            PAYELEMENTID.getItems().clear();
+            if (ikOvDnrService.getPAYELEMENTIDS() != null) {
+                PAYELEMENTID.getItems().addAll(ikOvDnrService.getPAYELEMENTIDS().split(","));
+            }
+            PAYELEMENTID.setDisable(PAYELEMENTID.getItems().isEmpty());
+            PAYELEMENTID.setRequired(!PAYELEMENTID.getItems().isEmpty());
+            return null;
         });
         PAYELEMENTID.setDisable(true);
         PAYELEMENTID.setRequired(false);
@@ -104,13 +114,21 @@ public class EditVIkVrfReqController extends JInvFXFormController<PVIkVrfReq> {
     private void sendRequest() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
         String connectionString = getTaskContext().getConnectionString(ConnectionStringFormatEnum.SQL_PLUS);
+
+        if(serviceProtocolXXIDataSet.getCurrentRow()==null||serviceProtocolXXIDataSet.getCurrentRow().getCVRFCLASSNAME()==null
+                ||serviceProtocolXXIDataSet.getCurrentRow().getCVRFJARFILEPATH()==null){
+            Alerts.error(this,"Отсутствуют или неверные настроки верификатора для протокола провайдера");
+            return;
+        }
+
         payVerifierTask = new BiCompTask() {
             @Override
             protected Object call() throws Exception {
-                File file = new File("i://japp//citypayverifier-1.0-SNAPSHOT-jar-with-dependencies.jar");
+
+                System.setProperty("logback.configurationFile", ".\\citypayverifiersl4j.xml");
+                File file = new File(serviceProtocolXXIDataSet.getCurrentRow().getCVRFJARFILEPATH());//"i://japp//citypayverifier-1.0-SNAPSHOT-jar-with-dependencies.jar"
                 URLClassLoader child = new URLClassLoader(new URL[]{file.toURI().toURL()}, ClassLoader.getSystemClassLoader());
-                Class classToLoad = Class.forName("ru.inversionkavkaz.citypayverifier.Main", true, child);
-                Class programOptionsClass = Class.forName("ru.inversionkavkaz.payverifierscore.ProgramOption", true, child);
+                Class classToLoad = Class.forName(serviceProtocolXXIDataSet.getCurrentRow().getCVRFCLASSNAME(), true, child);//"ru.inversionkavkaz.citypayverifier.Main"
 
                 Method method = classToLoad.getDeclaredMethod("send", Map.class);
                 Object instance  = classToLoad.newInstance();

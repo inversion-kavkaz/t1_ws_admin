@@ -11,6 +11,8 @@
 <columns>
 <JInvTableColumn fx:id="CPROTOCOL" text="%CPROTOCOL" fieldName="CPROTOCOL"  />
 <JInvTableColumn fx:id="CDESCR" text="%CDESCR" fieldName="CDESCR" prefWidth="300.0" />
+<JInvTableColumn fx:id="CVRFCLASSNAME" text="%CVRFCLASSNAME" fieldName="CVRFCLASSNAME" prefWidth="300.0" />
+<JInvTableColumn fx:id="CVRFJARFILEPATH" text="%CVRFJARFILEPATH" fieldName="CVRFJARFILEPATH" prefWidth="300.0" />
 </columns>
 <VBox.margin>
 <Insets bottom="5.0" left="5.0" right="5.0" />

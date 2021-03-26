@@ -38,6 +38,6 @@ public class App extends BaseApp
             .initProperties (p)
             .show ();
     }
-    
+
 }
 

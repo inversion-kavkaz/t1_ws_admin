@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import ru.inversion.fx.form.controls.*?>
-<?import ru.inversion.fx.form.lov.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import ru.inversion.fx.form.controls.JInvButton?>
+<?import ru.inversion.fx.form.controls.JInvLabel?>
+<?import ru.inversion.fx.form.controls.JInvTextField?>
 
-<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.protocol.controller.EditIkOvDnrServiceProtocolController">
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.inversionkavkaz.dnrwsadm.protocol.controller.EditIkOvDnrServiceProtocolController">
 <children>
 <GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
 <children>
 <JInvLabel fx:id="lblCPROTOCOL" text="%CPROTOCOL" GridPane.columnIndex="0" GridPane.rowIndex="0" />
 <JInvTextField fx:id="CPROTOCOL" fieldName="CPROTOCOL" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 <JInvLabel fx:id="lblCDESCR" text="%CDESCR" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-<JInvTextField fx:id="CDESCR" prefColumnCount="50" fieldName="CDESCR" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvTextField fx:id="CDESCR" fieldName="CDESCR" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+<JInvLabel fx:id="lblCVRFCLASSNAME" text="%CVRFCLASSNAME" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+<JInvTextField fx:id="CVRFCLASSNAME" fieldName="CVRFCLASSNAME" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+<JInvLabel fx:id="lblCVRFJARFILEPATH" text="%CVRFJARFILEPATH" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+<JInvTextField fx:id="CVRFJARFILEPATH" fieldName="CVRFJARFILEPATH" prefColumnCount="50" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 </children>
 <columnConstraints>
-<ColumnConstraints />
-<ColumnConstraints hgrow="ALWAYS" />
+<ColumnConstraints maxWidth="164.0" minWidth="112.0" prefWidth="164.0" />
+<ColumnConstraints hgrow="ALWAYS" maxWidth="570.0" minWidth="518.0" prefWidth="518.0" />
 </columnConstraints>
 <VBox.margin>
 <Insets />
@@ -28,7 +33,9 @@
 <rowConstraints>
 <RowConstraints />
 <RowConstraints />
-<RowConstraints minHeight="1.0"/>
+<RowConstraints />
+<RowConstraints />
+<RowConstraints minHeight="1.0" />
 </rowConstraints>
 </GridPane>
 <ButtonBar buttonMinWidth="80.0">

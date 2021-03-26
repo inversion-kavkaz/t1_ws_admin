@@ -27,7 +27,6 @@ public class PIkOvDnrService extends UMarkable implements Serializable, LovInter
     private String COMPARISONURL;
     private String PAYELEMENTIDS;
 
-
     public PIkOvDnrService(){}
 
     @Id 
